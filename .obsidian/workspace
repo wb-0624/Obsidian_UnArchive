@@ -44,6 +44,14 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "09f3adf4fae97946",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
           }
         ]
       }
@@ -93,8 +101,17 @@
               "type": "outline",
               "state": {}
             }
+          },
+          {
+            "id": "89cb37c881a47a91",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
