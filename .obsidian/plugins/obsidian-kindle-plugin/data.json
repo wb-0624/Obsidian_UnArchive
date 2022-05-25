@@ -2,7 +2,8 @@
   "amazonRegion": "global",
   "highlightsFolder": "/",
   "lastSyncMode": "amazon",
-  "isLoggedIn": false,
-  "syncOnBoot": false,
-  "downloadBookMetadata": true
+  "isLoggedIn": true,
+  "syncOnBoot": true,
+  "downloadBookMetadata": true,
+  "lastSyncDate": "2022-05-24T01:29:23.814Z"
 }
