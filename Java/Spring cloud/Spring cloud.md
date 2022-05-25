@@ -24,19 +24,17 @@ spring cloud 基于boot的云应用开发工具
 
 IoC容器管理一个或多个bean，bean根据提供给容器的配置元数据(.xml)创建。xml通常放置在resource文件夹下。
 
-Bean 定义实质上是创建一个或多个对象的方法。
-
 容器内，bean定义表示为BeanDefinition对象。包含以下属性：
 
 xml里
 
 | Property                 | Expalined in ... |
 | ------------------------ | ---------------- |
-| Class                    |                  |
-| Name                     |                  |
+| Class                    | 创建一个什么类    |
+| Name                     | 名称，id         |
 | Scope                    |                  |
 | Constructor arguments    |                  |
-| Properties               |                  |
+| Properties               | 为对象变量赋值    | 
 | Autowiring mode          |                  |
 | Lazy initialization mode |                  |
 | Initialization method    |                  |
@@ -81,20 +79,34 @@ public class DataConfig {
 
 测试配置
 ``` java
-ApplicationContext context = new ClassPathXmlApplicationContext("xxx.xml")
-System.out.println(context.getBean("accountDao"))//打印accountDao
+ApplicationContext context = new ClassPathXmlApplicationContext("DataConfig.xml")
+System.out.println(context.getBean("config"));
 ```
 
 
 输出
+``` shell
 DataConfig(url=www.baidu.com, driverName=wb)
+```
 2. 使用静态工厂方法实例化
 
 
 
 3. 使用实例工厂方法实例化
 
+先实例化一个工厂类，通过实例化工厂对象中的方法来创建bean，并注入到容器中。在xml配置文件bean中
 
+> facroty-bean指定拥有该工厂方法的Bean。
+> factory-method指定该工厂方法的名称。
+> construtor-arg元素为工厂传递方法参数。
+
+
+----
+1. xml 
+
+2. 函数
+
+3. 注解+包扫描
 
 
 # AOP
@@ -105,7 +117,7 @@ DataConfig(url=www.baidu.com, driverName=wb)
 
 重复的代码片段，抽象成对象，统一处理。相似位置使用相似的代码。
 
-![AOP](../img/AOP.excalidraw)
+![AOP](AOP.excalidraw.md)
 
 和平时使用的对象类（Student，Teacher，Admin）相比，更为抽象，描述的不是具体的对象，而是某些相似位置的流程。抽象化的面向对象编程。【将非业务重复代码抽离出来？】保留核心的业务代码。核心业务和非业务代码的解耦合。
 

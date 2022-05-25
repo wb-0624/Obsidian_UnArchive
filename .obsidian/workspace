@@ -7,9 +7,10 @@
         "id": "8e50b41efa61234d",
         "type": "leaf",
         "state": {
-          "type": "excalidraw",
+          "type": "markdown",
           "state": {
-            "file": "Java/img/AOP.excalidraw.md"
+            "file": "Java/Spring cloud/Spring cloud.md",
+            "mode": "source"
           }
         }
       }
@@ -75,7 +76,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/img/AOP.excalidraw.md"
+                "file": "Java/Spring cloud/Spring cloud.md"
               }
             }
           },
@@ -104,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/img/AOP.excalidraw.md",
+                "file": "Java/Spring cloud/Spring cloud.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,20 +129,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5
+    "width": 294.5,
+    "collapsed": true
   },
   "active": "8e50b41efa61234d",
   "lastOpenFiles": [
-    "Java/img/AOP.excalidraw.md",
     "Java/Spring cloud/Spring cloud.md",
-    "Java/img/AOP.excalidraw.md",
+    "Java/Spring cloud/项目结构.md",
+    "Java/Spring cloud/img/AOP.excalidraw.md",
     "易经/梅花易数.md",
     "Java/Spring cloud/Spring.md",
     "2021-12-06.md",
     "Excalidraw/Drawing 2022-05-24 14.22.27.excalidraw.md",
     "Test/Use.md",
     "README.md",
-    "一千天.md",
-    "Template/Template_read.md"
+    "一千天.md"
   ]
 }
