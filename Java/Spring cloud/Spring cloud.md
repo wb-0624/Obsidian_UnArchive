@@ -47,35 +47,47 @@ bean 命名：小写开头，遵循驼峰规则。id最多一个，name任意个
 bean实例化的三种方式:
 
 1. 用构造函数实例化
+
+xml文件配置
+
 ``` xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="accountDao"
-        class="org.springframework.samples.jpetstore.dao.jpa.JpaAccountDao">
-        <!-- additional collaborators and configuration for this bean go here -->
-		<property name = " " value = " "></property>
-		<!-- 填成员变量及其值-->
-    </bean>
-
-    <bean id="itemDao" class="org.springframework.samples.jpetstore.dao.jpa.JpaItemDao">
-        <!-- additional collaborators and configuration for this bean go here -->
-    </bean>
-
-    <!-- more bean definitions for data access objects go here -->
-
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
+	
+<bean class = "com.example.demo.ioc.DataConfig" id = "config">  
+    <property name="driverName" value="wb"></property>  
+    <property name="url" value="www.baidu.com"></property>  
+</bean>  
+	
 </beans>
 
 ```
 
+类配置
+```java
+package com.example.demo.ioc;  
+    
+import lombok.Data;  
+  
+@Data  //自动创建一些getter，setter等方法
+public class DataConfig {  
+    public String url;  
+    public String driverName;  
+}
+```
+
+
+测试配置
 ``` java
 ApplicationContext context = new ClassPathXmlApplicationContext("xxx.xml")
 System.out.println(context.getBean("accountDao"))//打印accountDao
 ```
 
+
+输出
+DataConfig(url=www.baidu.com, driverName=wb)
 2. 使用静态工厂方法实例化
 
 
