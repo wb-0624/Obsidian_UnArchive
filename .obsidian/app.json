@@ -2,5 +2,8 @@
   "newFileLocation": "current",
   "alwaysUpdateLinks": true,
   "vimMode": true,
-  "attachmentFolderPath": "./img"
+  "attachmentFolderPath": "././img",
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "newLinkFormat": "relative"
 }
