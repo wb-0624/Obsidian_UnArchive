@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "1642434a306a10c6",
+        "id": "a989a9a69fa16e30",
         "type": "leaf",
         "state": {
-          "type": "diff-view",
+          "type": "markdown",
           "state": {
-            "file": "易经/梅花易数.md",
-            "staged": false
+            "file": "Java/Spring cloud/Spring cloud.md",
+            "mode": "source"
           }
         }
       }
@@ -67,22 +67,16 @@
     "type": "split",
     "children": [
       {
-        "id": "bdd8dfb4c1caba2b",
+        "id": "6b5f9b8f728e371c",
         "type": "tabs",
         "children": [
           {
-            "id": "bf3619f021a46a9b",
+            "id": "82b57894dd099db6",
             "type": "leaf",
             "state": {
-              "type": "backlink",
+              "type": "outline",
               "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "file": "Java/Spring cloud/Spring cloud.md"
               }
             }
           },
@@ -98,11 +92,28 @@
             }
           },
           {
-            "id": "82b57894dd099db6",
+            "id": "24e8a3b63915599b",
             "type": "leaf",
             "state": {
-              "type": "outline",
+              "type": "advanced-tables-toolbar",
               "state": {}
+            }
+          },
+          {
+            "id": "bf3619f021a46a9b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Java/Spring cloud/Spring cloud.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
             }
           },
           {
@@ -114,16 +125,16 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
     "width": 294.5
   },
-  "active": "1642434a306a10c6",
+  "active": "a989a9a69fa16e30",
   "lastOpenFiles": [
-    "易经/梅花易数.md",
     "Java/Spring cloud/Spring cloud.md",
+    "易经/梅花易数.md",
     "Java/Spring cloud/Spring.md",
     "2021-12-06.md",
     "Java/img/AOP.excalidraw.md",
