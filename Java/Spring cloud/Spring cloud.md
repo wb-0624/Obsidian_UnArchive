@@ -8,19 +8,15 @@ spring cloud 基于boot的云应用开发工具
 
 行业标准。
 
-两大特性 IoC，AOP。
-
-从代码上讲：一个Spring容器就是某个实现了ApplicationContext接口的类的实例。也就是说，从代码层面，Spring容器其实就是一个ApplicationContext（一个实例化对象）。
-
-通常是对xml配置文件来实例化。
-
-通过类路径下寻找或系统文件路径下寻找配置文件。
+更为方便。
 
 # IoC
 
+## Bean
+
 不再是开发者手动创建对象。由IoC根据需求，配置文件自动创建对象。
 
-创建对象的容器。
+通过类路径下寻找或系统文件路径下寻找xml配置文件。
 
 IoC容器管理一个或多个bean，bean根据提供给容器的配置元数据(.xml)创建。xml通常放置在resource文件夹下。
 
@@ -44,11 +40,11 @@ bean 命名：小写开头，遵循驼峰规则。id最多一个，name任意个
 
 bean实例化的三种方式:
 
-1. ==用默认(无参)构造函数实例化==【常用】
+1. ==用构造函数实例化==【常用】
 
 直接通过spring工厂返回实例对象。
 
-xml文件配置
+xml文件配置 放在resource/bean目录下
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -56,7 +52,7 @@ xml文件配置
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> 
 	
-<bean class = "com.example.demo.ioc.DataConfig" id = "config">  
+<bean class = "com.example.demo.ioc.Bean1" id = "bean1">  
     <property name="driverName" value="wb"></property>  
     <property name="url" value="www.baidu.com"></property>  
 </bean>  
@@ -65,7 +61,12 @@ xml文件配置
 
 ```
 
+> IoC在需要用到bean1的时候，进行创建。创建一个类型为Bean1名称为bean1的对象。并对其内的属性进行赋值。
+
+> 参数赋值：name-value形式。指定下标[construtor-arg]。指定类型。
+
 类配置
+
 ```java
 package com.example.demo.ioc;  
     
@@ -79,10 +80,10 @@ public class DataConfig {
 ```
 
 
-测试配置
+测试
 ``` java
-ApplicationContext context = new ClassPathXmlApplicationContext("DataConfig.xml")
-System.out.println(context.getBean("config"));
+ApplicationContext context = new ClassPathXmlApplicationContext("bena/Bean.xml")
+System.out.println(context.getBean("bean1"));
 ```
 
 
@@ -94,6 +95,60 @@ DataConfig(url=www.baidu.com, driverName=wb)
 
 spring工厂通过调用自定义工厂的静态方法去返回类的实例对象。
 
+需要一个bean类，以及一个工厂类(有静态方法可以创建bean的实例)。
+
+# 
+
+class Bean2
+
+```java
+package com.example.demo.ioc;
+
+public class Bean2 {
+
+}
+```
+
+class Bean2Factory
+
+```java
+package com.example.demo.ioc;
+
+public class Bean2Factory {
+    public static Bean2 getBean2(){
+        System.out.println("use static method");
+        return new Bean2();
+    }
+}
+```
+
+xml配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "bean2" class = "com.example.demo.ioc.Bean2Factory" factory-method="getBean2">
+
+    </bean>
+</beans>
+```
+
+测试
+
+```java
+@Test
+public void Bean2(){
+    ApplicationContext context = new ClassPathXmlApplicationContext("bean/Bean2.xml");
+    Bean2 bean2 = (Bean2)context.getBean("bean2");
+    System.out.println(bean2);
+}
+```
+
+> 调用Bean2Factory类的静态方法，创建一个名为bean2的对象。静态方法可以直接用类名.方法名调用。
+
 
 
 3. 使用实例工厂方法实例化
@@ -104,13 +159,68 @@ spring工厂通过调用自定义工厂的静态方法去返回类的实例对�
 > factory-method指定该工厂方法的名称。
 > construtor-arg元素为工厂传递方法参数。
 
+class Bean3
 
-----
-1. xml 
+```java
+package com.example.demo.ioc;
 
-2. 函数
+public class Bean3 {
+}
+```
 
-3. 注解+包扫描
+class Bean3Factory
+
+```java
+package com.example.demo.ioc;
+
+public class Bean3Factory {
+    public Bean3 getBean3(){
+        System.out.println("normal method");
+        return new Bean3();
+    }
+}
+```
+
+Bean3.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class = "com.example.demo.ioc.Bean3Factory" id = "bean3Factory">  </bean>
+    <bean id = "bean3" factory-bean="bean3Factory" factory-method="getBean3"></bean>
+</beans>
+```
+
+> 与静态方法可以直接由类名调用不同，实例方法必须先实例化再调用。
+>
+> [1]. 先实例化Bean3Factorty类
+>
+> [2]. 再调用实例化方法来创建bean3对象。
+
+> “ factory bean”是指在 Spring 容器中配置并通过instance或static工厂方法创建对象的 Bean。
+
+
+
+测试
+
+```java
+@Test
+public void Bean3(){
+    ApplicationContext context = new ClassPathXmlApplicationContext("bean/Bean3.xml");
+    Bean3 bean3 = (Bean3)context.getBean("bean3");
+    System.out.println(bean3);
+}
+```
+
+## DI(依赖注入)
+
+### 基于构造函数
+
+### 基于setter
+
+
 
 
 # AOP
