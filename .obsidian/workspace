@@ -4,30 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9ffe2d00e13a08f1",
-        "type": "split",
-        "children": [
-          {
-            "id": "f114c37027e56a8e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Java/Spring cloud/项目结构.md",
-                "mode": "source"
-              }
-            }
-          },
-          {
-            "id": "fb19073935cff6bd",
-            "type": "leaf",
-            "state": {
-              "type": "mindmap",
-              "state": {}
-            }
+        "id": "f114c37027e56a8e",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Java/Spring cloud/项目结构.md",
+            "mode": "source"
           }
-        ],
-        "direction": "horizontal"
+        }
       }
     ],
     "direction": "vertical"
@@ -144,8 +129,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294.5,
-    "collapsed": true
+    "width": 294.5
   },
   "active": "f114c37027e56a8e",
   "lastOpenFiles": [
