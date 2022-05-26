@@ -30,7 +30,7 @@ xml里
 | Name                     | 名称，id         |
 | Scope                    |                  |
 | Constructor arguments    |                  |
-| Properties               | 为对象变量赋值    | 
+| Properties               | 为对象属性赋值  |
 | Autowiring mode          |                  |
 | Lazy initialization mode |                  |
 | Initialization method    |                  |
@@ -97,7 +97,7 @@ spring工厂通过调用自定义工厂的静态方法去返回类的实例对�
 
 需要一个bean类，以及一个工厂类(有静态方法可以创建bean的实例)。
 
-# 
+
 
 class Bean2
 
@@ -216,11 +216,29 @@ public void Bean3(){
 
 ## DI(依赖注入)
 
+【属性赋值？】
+
+基本使用name-value形式。
+
 ### 基于构造函数
+
+<constructor-arg>
+
+name-value
+
+index-value 从0开始
+
+type-value
 
 ### 基于setter
 
+<property>
 
+本质还是调用setter方法。
+
+------
+
+由于可以混合使用基于构造函数的 DI 和基于 setter 的 DI，因此将构造函数用于强制性依赖项并将 setter 方法或配置方法用于可选依赖性是一个很好的经验法则。
 
 
 # AOP
