@@ -28,12 +28,12 @@ xml里
 | ------------------------ | ---------------- |
 | Class                    | 创建一个什么类    |
 | Name                     | 名称，id         |
-| Scope                    |                  |
-| Constructor arguments    |                  |
-| Properties               | 为对象属性赋值  |
-| Autowiring mode          |                  |
-| Lazy initialization mode | lazy-init = true，默认是false。<br />默认是在ApplicationContext启动时就预初始化bean实例。否则在初次使用到时，才进行实例化。 |
-| Initialization method    |                  |
+| Scope                    | singleton，prototype，request，session，application，websocket |
+| Constructor arguments    | 构造依赖注入 |
+| Properties               | setter依赖注入 |
+| Autowiring mode          | 针对属性中的bean属性。autowire = “ ”<br />no：Bean引用由\<ref>定义<br />byName：自动寻找和name相同的beanID<br />byType：type唯一。<br />constructor：类似于byType，适用于构造函数参数。也是通过类型装配。 |
+| Lazy initialization mode | lazy-init = true，默认是false。<br />默认是在ApplicationContext启动时就预初始化bean实例。<br />否则在初次使用到时，才进行实例化。 |
+| Initialization method    | 1. Lookup Method inject 返回值注入<br />2. Arbitrary method replacement 任意方法注入 |
 | Destruction method       |                  |
 
 bean 命名：小写开头，遵循驼峰规则。id最多一个，name任意个。
@@ -253,6 +253,120 @@ type-value 多种重复类型，不推荐使用。
 | ref bean = "beanID/beanName" | 传递bean实例对象   |
 | List,Set,Map,Property        |                    |
 
+## 方法注入
+
+单例bean A依赖于非单例bean B时。
+
+```java
+public class User {
+
+    private String name;
+    private int age;
+    // 依赖于car
+    private Car car;
+
+    // 为这个方法进行注入
+   	public Car getCar() {
+        return car;
+    }
+    
+	// 省略其他setter和getter，以及toString方法
+}
+
+public class Car {
+    private int speed;
+    private double price;
+
+    // 省略setter和getter，以及toString方法
+}
+```
+
+```java
+    Car c1 = user.getCar();
+    Car c2 = user.getCar();
+    Car c3 = user.getCar();
+```
+
+由于创建A时就创建了B，并且缓存在容器中。那么之后基于bean A获得的bean B永远是同一个，就失去了非单例的意义。
+
+### 返回值注入
+
+通过lookup
+
+```xml
+<!-- 将user的作用域定义为singleton -->
+<bean id="user" class="cn.tewuyiang.pojo.User" scope="singleton">
+    <property name="name" value="aaa" />
+    <property name="age" value="28" />
+    <!--
+        配置查找方法注入，替换getCar方法，让他成为从spring容器中查找car的一个工厂方法
+    查找名为getCar的函数，并且其返回值用bean car覆盖
+    -->
+    <lookup-method name="getCar" bean="car" />
+</bean>
+
+<!-- 将car的作用域定义为prototype -->
+<bean id="car" class="cn.tewuyiang.pojo.Car" scope="prototype">
+    <property name="price" value="9999.35" />
+    <property name="speed" value="100" />
+</bean>
+```
+
+```java
+@Test
+public void testXML() throws InterruptedException {
+    // 创建Spring容器
+    ClassPathXmlApplicationContext context =
+        new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+    // 获取User对象
+    User user = context.getBean(User.class);
+    // 多次调用getCar方法，获取多个car
+    Car c1 = user.getCar();
+    Car c2 = user.getCar();
+    Car c3 = user.getCar();
+    // 分别输出car的hash值，看是否相等，以此判断是否是同一个对象
+    System.out.println(c1.hashCode());
+    System.out.println(c2.hashCode());
+    System.out.println(c3.hashCode());
+    // 输出user这个bean所属类型的父类
+    System.out.println(user.getClass().getSuperclass());
+}
+```
+
+虽然三次getCar下的属性值是一样的，但是hashCode是不同的。证明了三次调用，返回的是三个不同的bean。
+
+运用注解
+
+```java
+@Component
+public class User {
+    private String name;
+    private int age;
+    private Car car;
+
+    // 使用Lookup注解，告诉Spring这个方法需要使用查找方法注入
+    // 这里直接使用@Lookup，则Spring将会依据方法返回值
+    // 将它覆盖为一个在Spring容器中获取Car这个类型的bean的方法
+    // 但是也可以指定需要获取的bean的名字，如：@Lookup("car")
+    // 此时，名字为car的bean，类型必须与方法的返回值类型一致
+    @Lookup
+    public Car getCar() {
+        return car;
+    }
+    
+    // 省略其他setter和getter，以及toString方法
+    
+}
+
+@Component
+@Scope("prototype")	// 声明为多例
+public class Car {
+    private int speed;
+    private double price;
+
+    // 省略setter和getter，以及toString方法
+}
+```
 
 
 
@@ -289,4 +403,20 @@ type-value 多种重复类型，不推荐使用。
 1.   生成文档。
 2.   跟踪代码依赖性，实现替代配置文件功能。
 3.   在编译时进行格式检查。 如@Override，是否覆盖超类的方法。
+
+## @ Request
+
+用于setter方法，被注解的方法其属性必须在xml被配置。
+
+
+
+## @Autowired
+
+标注在属性、方法、构造器上来完成自动装配。
+
+【注解后，是否还需要声明autowire属性？】
+
+## @primary
+
+为自动装配下多个bean中，定出主要候选对象。
 
