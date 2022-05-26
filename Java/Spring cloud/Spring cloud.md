@@ -218,27 +218,43 @@ public void Bean3(){
 
 【属性赋值？】
 
-基本使用name-value形式。
-
 ### 基于构造函数
 
-<constructor-arg>
+```<constructor-arg name = "" value = ""></constructor-arg>```
 
 name-value
 
 index-value 从0开始
 
-type-value
+type-value 多种重复类型，不推荐使用。
 
 ### 基于setter
 
-<property>
+```<property name = "	" value = " "> </property>```
 
-本质还是调用setter方法。
+本质还是调用setter方法，所以必须是类中实现过setter方法才能使用。
+
+> 基本使用name-value形式。
+>
+> value改成ref = "beanid"，引用其他bean。
 
 ------
 
-由于可以混合使用基于构造函数的 DI 和基于 setter 的 DI，因此将构造函数用于强制性依赖项并将 setter 方法或配置方法用于可选依赖性是一个很好的经验法则。
+由于可以混合使用基于构造函数的 DI 和基于 setter 的 DI，因此将构造函数用于强制性依赖项并将 setter 方法或配置方法用于可选依赖性是一个很好的法则。
+
+
+
+依赖项详细配置
+
+| type              | value              |
+| ----------------- | ------------------ |
+| String，int等直值 | 由Spring自动转化   |
+| idref             | 仅beanid，检查错误 |
+| ref               | 传递bean实例对象   |
+
+
+
+
 
 
 # AOP
