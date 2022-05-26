@@ -32,7 +32,7 @@ xml里
 | Constructor arguments    |                  |
 | Properties               | 为对象属性赋值  |
 | Autowiring mode          |                  |
-| Lazy initialization mode |                  |
+| Lazy initialization mode | lazy-init = true，默认是false。<br />默认是在ApplicationContext启动时就预初始化bean实例。否则在初次使用到时，才进行实例化。 |
 | Initialization method    |                  |
 | Destruction method       |                  |
 
@@ -236,7 +236,7 @@ type-value 多种重复类型，不推荐使用。
 
 > 基本使用name-value形式。
 >
-> value改成ref = "beanid"，引用其他bean。
+> value改成ref = "beanID"，引用其他bean。
 
 ------
 
@@ -246,11 +246,12 @@ type-value 多种重复类型，不推荐使用。
 
 依赖项详细配置
 
-| type              | value              |
-| ----------------- | ------------------ |
-| String，int等直值 | 由Spring自动转化   |
-| idref             | 仅beanid，检查错误 |
-| ref               | 传递bean实例对象   |
+| type                         | value              |
+| ---------------------------- | ------------------ |
+| String，int等直值            | 由Spring自动转化   |
+| idref bean = “beanID”        | 仅beanid，检查错误 |
+| ref bean = "beanID/beanName" | 传递bean实例对象   |
+| List,Set,Map,Property        |                    |
 
 
 
