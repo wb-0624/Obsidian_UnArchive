@@ -1,15 +1,3 @@
-# 什么是Spring？
-
-spring boot 一种框架
-
-spring cloud 基于boot的云应用开发工具
-
-# 为什么要用spring？
-
-行业标准。
-
-更为方便。
-
 # IoC
 
 ## Bean
@@ -216,8 +204,6 @@ public void Bean3(){
 
 ## DI(依赖注入)
 
-【属性赋值？】
-
 ### 基于构造函数
 
 ```<constructor-arg name = "" value = ""></constructor-arg>```
@@ -252,6 +238,45 @@ type-value 多种重复类型，不推荐使用。
 | idref bean = “beanID”        | 仅beanid，检查错误 |
 | ref bean = "beanID/beanName" | 传递bean实例对象   |
 | List,Set,Map,Property        |                    |
+
+通过注解
+
+```java
+@Component
+public class Person {
+    @Value("Mike")
+    private String name;
+    @Value("18")
+    private int age;
+
+    @Autowired
+    private Car car;
+
+}
+```
+
+```java
+@Component
+public class Car {
+    @Value("10000")
+    private int price;
+    @Value("BWM")
+    private String logo;
+
+}
+```
+
+```java
+    @Test
+    public void test1(){
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.example.demo.ioc");
+        System.out.println(context.getBean("person"));
+    }
+```
+
+
+
+
 
 ## 方法注入
 
@@ -342,6 +367,8 @@ public void testXML() throws InterruptedException {
 public class User {
     private String name;
     private int age;
+    
+    
     private Car car;
 
     // 使用Lookup注解，告诉Spring这个方法需要使用查找方法注入
@@ -368,33 +395,9 @@ public class Car {
 }
 ```
 
+## 生命周期
 
 
-
-
-# AOP
-
-## 概念
-
-借助于IoC
-
-重复的代码片段，抽象成对象，统一处理。相似位置使用相似的代码。
-
-![AOP](AOP.excalidraw.md)
-
-和平时使用的对象类（Student，Teacher，Admin）相比，更为抽象，描述的不是具体的对象，而是某些相似位置的流程。抽象化的面向对象编程。【将非业务重复代码抽离出来？】保留核心的业务代码。核心业务和非业务代码的解耦合。
-
-和函数的区别？
-
-函数需要调用，AOP只需要配置。
-
-## 实现
-
-1. 创建切面类，需要声明@Aspect
-2. 注入IoC
-3. 目标方法和切面对象连接
-    Joinpoint，获取目标方法的包括名称，参数等数据。
-4. 方法执行前，方法执行后等区分。【方法执行中间是否可以？】
 
 
 
@@ -404,19 +407,52 @@ public class Car {
 2.   跟踪代码依赖性，实现替代配置文件功能。
 3.   在编译时进行格式检查。 如@Override，是否覆盖超类的方法。
 
-## @ Request
+## @Request
 
 用于setter方法，被注解的方法其属性必须在xml被配置。
 
-
-
 ## @Autowired
 
-标注在属性、方法、构造器上来完成自动装配。
+标注在属性、方法、构造器上来完成自动装配。通过Type进行注入。
 
-【注解后，是否还需要声明autowire属性？】
+如果同一类型下有多种实现，则可以通过@Qualifier("beanID")来指定注入的实例。
 
-## @primary
+## @Resource
 
-为自动装配下多个bean中，定出主要候选对象。
+用于注入，@Resource(name = "")，未指定name就根据setter方法派生。
+
+## @Primary
+
+为自动装配下多个type相同的bean中，定出主要候选对象。主要和@Aurowired一起使用。
+
+## @Component
+
+bean注册
+
+告诉spring此类需要被注入IoC。并且可以用过@Value进行依赖注入。
+
+下面三个@Repository，@Service，@Controller是@Component的特化，用于更具体的用例。
+
+## @Repository
+
+持久层。
+
+通常用于注解DAO[数据访问对象]。
+
+## @Service
+
+服务层
+
+## @Controller
+
+表示层。
+
+
+## @Bean
+
+注解方法，表示返回值就是一个bean，将其注入IoC。配合@Configuration【注解类】使用。
+
+## @Profile
+
+根据需要，配置多套环境，便于切换，不用一直修改配置文件。
 
