@@ -124,16 +124,17 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 294.5,
+    "collapsed": true
   },
   "active": "f114c37027e56a8e",
   "lastOpenFiles": [
     "Java/Spring cloud/AOP.md",
+    "Java/Spring cloud/IoC.md",
     "Java/Spring cloud/Spring cloud.md",
     "Java/Spring cloud/项目结构.md",
     "Java/Spring cloud/img/Pasted image 20220525172958.png",
@@ -141,7 +142,6 @@
     "易经/梅花易数.md",
     "Java/Spring cloud/Spring.md",
     "2021-12-06.md",
-    "Excalidraw/Drawing 2022-05-24 14.22.27.excalidraw.md",
-    "Test/Use.md"
+    "Excalidraw/Drawing 2022-05-24 14.22.27.excalidraw.md"
   ]
 }

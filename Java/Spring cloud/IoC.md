@@ -445,7 +445,7 @@ bean注册
 
 ## @Controller
 
-表示层。
+表示层
 
 
 ## @Bean
