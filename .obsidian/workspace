@@ -124,12 +124,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 294.5,
-    "collapsed": true
+    "width": 294.5
   },
   "active": "f114c37027e56a8e",
   "lastOpenFiles": [
