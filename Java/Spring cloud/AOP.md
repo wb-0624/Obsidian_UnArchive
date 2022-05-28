@@ -36,6 +36,8 @@
 
 使用建议时，使用最简单的。
 
+order，优先级高的后运行。
+
 - 连接点(Join point)
 
 允许使用通知的地方，都算连接点。
@@ -74,17 +76,120 @@ Advice通过Point cut来连接和接入Join Point。
 
 ## 实现大致步骤
 
-1. 创建切面类，需要声明@Aspect
-2. 注入IoC
-3. 目标方法和切面对象连接
-   Join point，获取目标方法的包括名称，参数等数据。
-4. 方法执行前，方法执行后等区分。
+1. 声明切面类，并把业务逻辑组件和切面类都加入到容器中。
+2. 在切面类上的每一个通知方法都标注通知注解，和切入点表达式。
+3. 开启基于注解的aop模式。
 
 ## 声明
+``` java
+package io.binghe.spring.aop;
 
-创建一个类用于作为切面。
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.*;
 
-1. 基于注解
-   在类上面使用@Aspect
-2. 基于xml
-   
+import java.util.Arrays;
+
+/**
+ * @author binghe
+ * @version 1.0.0
+ * @description Spring的切面类
+ */
+
+@Aspect                                         //声明切面类
+public class LogAspect {
+
+    @Pointcut("execution(public int io.binghe.spring.aop.MatchCalculator.*(..))")  //切入点表达式(指定切面作用于哪些包下的哪些方法)
+    public void pointCut(){}
+     
+    @Before("pointCut()")
+    public void logStart(JoinPoint joinPoint){
+        System.out.println(joinPoint.getSignature().getName() + "运行...参数列表是：{"+ Arrays.asList(joinPoint.getArgs()) +"}");
+    }
+     
+    @After("pointCut()")
+    public void logEnd(JoinPoint joinPoint){
+        System.out.println(joinPoint.getSignature().getName() + "结束...");
+    }
+     
+    @AfterReturning(value = "pointCut()", returning = "result")
+    public void logReturn(JoinPoint joinPoint, Object result){
+        System.out.println(joinPoint.getSignature().getName() + "正常返回...运行结果：{"+result+"}");
+    }
+     
+    @AfterThrowing(value = "pointCut()", throwing = "e")
+    public void logException(JoinPoint joinPoint, Exception e){
+        System.out.println(joinPoint.getSignature().getName() + "异常...异常信息：{"+e+"}");
+    }
+}
+```
+
+注入IoC
+
+```java
+package io.binghe.spring.config;
+
+import io.binghe.spring.aop.LogAspect;
+import io.binghe.spring.aop.MatchCalculator;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+/**
+
+ * @author binghe
+
+ * @version 1.0.0
+
+ * @description Spring配置类
+   */
+   @Configuration
+   @EnableAspectJAutoProxy      //开启Aspect
+   public class MainConfigOfAOP {
+
+   @Bean
+   public MatchCalculator matchCalculator(){
+       return new MatchCalculator();
+   }
+
+   @Bean
+   public LogAspect logAspect(){
+       return new LogAspect();
+   }
+   }
+```
+
+测试
+
+```java
+package io.binghe.spring.test;
+ 
+import io.binghe.spring.aop.MatchCalculator;
+import io.binghe.spring.config.MainConfigOfAOP;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+ 
+/**
+ * @author binghe
+ * @version 1.0.0
+ * @description AOP实例测试类
+ */
+public class IOCTestAOP {
+ 
+    private AnnotationConfigApplicationContext applicationContext = null;
+ 
+    @Before
+    public void initTest(){
+        applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
+    }
+ 
+    @Test
+    public void test01(){
+        MatchCalculator calculator = applicationContext.getBean(MatchCalculator.class);
+        calculator.div(1, 0);
+    }
+}
+```
+
+
+
