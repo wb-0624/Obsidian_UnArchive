@@ -1,16 +1,15 @@
 {
   "main": {
-    "id": "d1aae23000253360",
+    "id": "fd1103b9d9eef50b",
     "type": "split",
     "children": [
       {
-        "id": "f114c37027e56a8e",
+        "id": "cc4c4f141c90fe6f",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "excalidraw",
           "state": {
-            "file": "Java/Spring cloud/AOP.md",
-            "mode": "source"
+            "file": "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.md"
           }
         }
       }
@@ -18,15 +17,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "f73db9d78e60c8a3",
+    "id": "f4818734f90e62b4",
     "type": "split",
     "children": [
       {
-        "id": "1a9978c00e7deb44",
+        "id": "49804ef29a8cb40e",
         "type": "tabs",
         "children": [
           {
-            "id": "8e782575b9f48f77",
+            "id": "06489cf6c51c8967",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -34,7 +33,7 @@
             }
           },
           {
-            "id": "7af18b0a13f185ae",
+            "id": "869973f450755251",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -49,7 +48,7 @@
             }
           },
           {
-            "id": "09f3adf4fae97946",
+            "id": "7917df97add081e4",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -60,52 +59,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241
+    "width": 300
   },
   "right": {
-    "id": "cb6a3728216af207",
+    "id": "2a9568509ba0b482",
     "type": "split",
     "children": [
       {
-        "id": "6b5f9b8f728e371c",
+        "id": "6dbd544751f996e9",
         "type": "tabs",
         "children": [
           {
-            "id": "82b57894dd099db6",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Java/Spring cloud/AOP.md"
-              }
-            }
-          },
-          {
-            "id": "e4a4e90cb8afc595",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "24e8a3b63915599b",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
-          },
-          {
-            "id": "bf3619f021a46a9b",
+            "id": "f6d27fe351088a9a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/Spring cloud/AOP.md",
+                "file": "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,34 +87,37 @@
             }
           },
           {
-            "id": "89cb37c881a47a91",
+            "id": "eb3be1139f988a93",
             "type": "leaf",
             "state": {
-              "type": "git-view",
-              "state": {}
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3c801f2d5d3feec2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 294.5
+    "width": 300,
+    "collapsed": true
   },
-  "active": "f114c37027e56a8e",
+  "active": "cc4c4f141c90fe6f",
   "lastOpenFiles": [
-    "Java/Spring cloud/AOP.md",
-    "Java/Spring cloud/IoC.md",
-    "Java/Spring cloud/Spring cloud.md",
-<<<<<<< HEAD
-    "Java/img/AOP.excalidraw.md",
-=======
-    "Java/Spring cloud/项目结构.md",
-    "Java/Spring cloud/img/Pasted image 20220525172958.png",
-    "Java/Spring cloud/img/AOP.excalidraw.md",
->>>>>>> 0cd125a522dcfba52ecb797505a46eb54fd67310
-    "易经/梅花易数.md",
-    "Java/Spring cloud/Spring.md",
-    "2021-12-06.md",
-    "Excalidraw/Drawing 2022-05-24 14.22.27.excalidraw.md"
+    "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.md",
+    "Excalidraw/地图.png",
+    "攻略.md"
   ]
 }
