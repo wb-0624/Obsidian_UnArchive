@@ -73,7 +73,7 @@ public class SomePersonReference{
 >
 > 同时，@Value可以以读取外部文件内容来进行赋值。
 >
-> @Component，注解下方的类，将直接以somePersonReference的名称创建一个bean注入到IoC当中。
+> @Component，注解下方的类，将直接以somePersonReference的名称创建一个bean注入到IoC当中。@Repository，@Service，@Controller是@Component的子类。同样也可以达到相同的功能。
 >
 > @Autowired，注解下方的字段。Person marry将由Spring去IoC里去找一个Person类的bean直接赋值给marry，不需要手动赋值。尽量唯一。
 >

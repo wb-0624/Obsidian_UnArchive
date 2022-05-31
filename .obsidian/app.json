@@ -5,5 +5,6 @@
   "attachmentFolderPath": "././img",
   "useMarkdownLinks": true,
   "showUnsupportedFiles": true,
-  "newLinkFormat": "relative"
+  "newLinkFormat": "relative",
+  "useTab": false
 }
