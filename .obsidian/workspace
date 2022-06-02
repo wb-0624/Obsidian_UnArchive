@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "62a545629497cefb",
+        "id": "46cc02c4528eef7d",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/Spring/Spring MVC.md",
+            "file": "Java/Spring/Spring Web项目.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/Spring/Spring MVC.md",
+                "file": "Java/Spring/Spring Web项目.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/Spring/Spring MVC.md"
+                "file": "Java/Spring/Spring Web项目.md"
               }
             }
           }
@@ -114,20 +114,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 262.5,
-    "collapsed": true
+    "width": 262.5
   },
-  "active": "62a545629497cefb",
+  "active": "46cc02c4528eef7d",
   "lastOpenFiles": [
+    "Java/Spring/Spring Web项目.md",
+    "Java/Spring/JeeSite项目分析.md",
+    "全栈学习路径/前端设计/HTML/HTML标签速查.md",
+    "全栈学习路径/前端设计/HTML/HTML.md",
+    "Java/Spring/REST Clients.md",
+    "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.png",
+    "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.md",
     "Java/Spring/Spring MVC.md",
     "Java/Spring/IoC.md",
-    "Excalidraw/Drawing 2022-05-31 13.26.51.excalidraw.md",
-    "Java/Spring/IoC+AOP.md",
-    "Java/Spring/AOP.md",
-    "Excalidraw/Drawing 2022-05-30 14.47.37.excalidraw.md",
-    "Excalidraw/Drawing 2022-05-29 15.56.16.excalidraw.png",
-    "Java/Spring/img/AOP.png",
-    "Java/Spring cloud/img/AOP.excalidraw.md",
-    "Java/Spring cloud/img/image-20220527142322996.png"
+    "Excalidraw/Drawing 2022-05-31 13.26.51.excalidraw.md"
   ]
 }
