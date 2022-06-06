@@ -13,15 +13,7 @@ Model(数据模型层)，View(视图层)，Controller(控制层)。使用MVC的�
 
 工作流程：用户通过视图层发送请求到服务器，在服务器中请求被Controller接收，Controller调用相应的Model层处理请求，将结果返回。Controller再根据处理结果找到相应的View视图，渲染数据后响应给浏览器。
 
-Spring MVC是Spring为表述层(表示层)开发的。
 
-> 三层架构为：表述层、业务逻辑层、数据访问层。表述层展示前台页面和后台servlet。
-
-![Servlet](img/Servlet.png)
-
-> Java Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。
->
-> 使用 Servlet，您可以收集来自网页表单的用户输入，呈现来自数据库或者其他源的记录，还可以动态创建网页。
 
 
 
@@ -192,7 +184,7 @@ public class IndexController {
 
 
 
-## PathVariable
+## @PathVariable
 
 用于匹配路径中的参数，传入方法。
 
