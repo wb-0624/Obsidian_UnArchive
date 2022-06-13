@@ -187,6 +187,11 @@ public class IndexAction {
 
 通过的QPS只有1，当次数超过的时候，会被拒绝。
 
+
+
+- fallback：若本接口出现未知异常，则调用fallback指定的接口。
+- blockHandler：若本次访问被限流或服务降级，则调用blockHandler指定的接口。
+
 # 熔断降级
 
 ## 什么是熔断降级
