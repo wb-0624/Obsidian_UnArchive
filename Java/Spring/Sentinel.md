@@ -10,7 +10,7 @@
 
 使用cmd，切勿使用powershell。
 
-```cmd
+```shell
 java -Dserver.port=8333 -Dcsp.sentinel.dashboard.server=localhost:8333 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.4.2.jar
 ```
 
@@ -70,7 +70,7 @@ public class SentinelAspectConfiguration {
 
 
 
-```cmd
+```shell
 java -Dserver.port=8333 -Dcsp.sentinel.dashboard.server=localhost:8333 -Dproject.name=sentinel-dashboard   -jar --add-exports=java.base/sun.net.util=ALL-UNNAMED sentinel-dashboard-1.8.4.jar
 ```
 
@@ -192,6 +192,12 @@ public class IndexAction {
 - fallback：若本接口出现未知异常，则调用fallback指定的接口。
 - blockHandler：若本次访问被限流或服务降级，则调用blockHandler指定的接口。
 
+首先我们要知道`blockHandler属性` 是针对于Sentinel异常，`blockHandler` 对应处理 `BlockException` 的函数名称，而`fallback属性`针对于Java异常。
+
+熔断之前的异常由fallback进行处理。
+
+触发熔断规则后的异常则由blockHandler进行处理。
+
 # 熔断降级
 
 ## 什么是熔断降级
@@ -202,3 +208,11 @@ public class IndexAction {
 - 当某些服务不可用时，为了避免长时间等待造成服务卡顿或雪崩效应，而主动执行备用的降级逻辑立刻返回一个友好的提示，以保障主体业务不受影响。
 
 ![熔断状态转换](img/10162355X-7.png)
+
+**慢调用比例** (`SLOW_REQUEST_RATIO`)：选择以慢调用比例作为阈值，需要设置允许的慢调用 RT（即最大的响应时间），请求的响应时间大于该值则统计为慢调用。当单位统计时长（`statIntervalMs`）内请求数目大于设置的最小请求数目，并且慢调用的比例大于阈值，则接下来的熔断时长内请求会自动被熔断。经过熔断时长后熔断器会进入探测恢复状态（HALF-OPEN 状态），若接下来的一个请求响应时间小于设置的慢调用 RT 则结束熔断，若大于设置的慢调用 RT 则会再次被熔断。
+
+**异常比例** (`ERROR_RATIO`)：当单位统计时长（`statIntervalMs`）内请求数目大于设置的最小请求数目，并且异常的比例大于阈值，则接下来的熔断时长内请求会自动被熔断。经过熔断时长后熔断器会进入探测恢复状态（HALF-OPEN 状态），若接下来的一个请求成功完成（没有错误）则结束熔断，否则会再次被熔断。异常比率的阈值范围是 `[0.0, 1.0]`，代表 0% - 100%。
+
+**异常数** (`ERROR_COUNT`)：当单位统计时长内的异常数目超过阈值之后会自动进行熔断。经过熔断时长后熔断器会进入探测恢复状态（HALF-OPEN 状态），若接下来的一个请求成功完成（没有错误）则结束熔断，否则会再次被熔断。
+
+使用fallback检测异常并给出错误信息，当规定时间内错误超出阈值后，就触发熔断，由blockHandler给出错误信息。
