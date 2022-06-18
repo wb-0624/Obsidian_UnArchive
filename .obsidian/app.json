@@ -6,5 +6,7 @@
   "useMarkdownLinks": true,
   "showUnsupportedFiles": true,
   "newLinkFormat": "relative",
-  "useTab": false
+  "useTab": false,
+  "legacyEditor": true,
+  "showLineNumber": true
 }
