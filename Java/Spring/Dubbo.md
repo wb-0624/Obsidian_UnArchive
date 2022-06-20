@@ -1,3 +1,6 @@
+需要主启动类添加@Dubbo
+
+
 幂等：相同的参数得到相同的返回结果。
 
 非幂等：相同的参数可以有不同的返回结果。
@@ -6,7 +9,9 @@
 
 # Dubbo属性配置
 ```properties
-dubbo.protocol.host 设置主机地址
+dubbo.protocol.host                                 设置主机地址
+dubbo.registry.address = nacos://localhost:8848     注册Nacos地址
+dubbo.protocol.port = 20880                         此项目dubbo端口为20880
 
 
 ```

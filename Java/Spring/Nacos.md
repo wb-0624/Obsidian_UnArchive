@@ -212,3 +212,21 @@ spring.cloud.nacos.config.group=DEVELOP_GROUP
 客户端需要一种能力能够及时感知到集群发生变化。通过endpoint来实现。
 
 默认空<系统变量ALIBABA_ALIWARE_ENDPOINT_URL<配置文件
+
+
+
+Spring Boot中有两种上下文配置，一种是bootstrap，另外一种是application。bootstrap是应用程序的父上下文，也就是说bootstrap加载优先于application。由于在加载远程配置之前，需要读取Nacos配置中心的服务地址信息，所以Nacos服务地址等属性配置需要放在bootstrap中。
+
+使用bootstrap需要引入相关依赖。
+
+
+
+如何去Nacos读取配置？
+
+配置在Nacos中通过Data-ID进行区分。
+
+Data-ID的默认规则是\${prefix}-\${spring.profile.active}.\${file-extension}
+
++ 默认：没有指定前缀prefix的情况下，去Nacos上加载Data-ID为\${spring.applicaton.name}-\${file-extension:properties}文件扩展默认是properties。
++ 若指定了prefix属性，则会加载Data ID = name的配置。
++ spring.profile.active表示多环境支持。

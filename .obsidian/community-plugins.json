@@ -1,7 +1,6 @@
 [
   "ProxyGithub",
   "table-editor-obsidian",
-  "obsidian-excalidraw-plugin",
   "templater-obsidian",
   "sliding-panes-obsidian",
   "cm-editor-syntax-highlight-obsidian",
@@ -10,5 +9,6 @@
   "markdown-prettifier",
   "obsidian-charts",
   "extract-url",
-  "obsidian-outliner"
+  "obsidian-outliner",
+  "oz-clear-unused-images"
 ]
