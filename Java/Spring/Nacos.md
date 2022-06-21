@@ -90,7 +90,7 @@ public class DeptController_Consumer {
 }
 ```
 
-通过对http://127.0.0.1:8801/consumer/dept/nacos/1访问时，会返回http://spring-cloud-alibaba-provider/dept/nacos/1的内容。
+通过对 http://127.0.0.1:8801/consumer/dept/nacos/1 访问时，会返回 http://spring-cloud-alibaba-provider/dept/nacos/1 的内容。
 
 即consumer对provider注册的服务进行了调用。
 

@@ -4,24 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "51c5a4d632c8de1f",
+        "id": "a63aee157256a94b",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Java/Spring Cloud/服务.md",
+            "file": "Java/Spring Cloud/Sentinel不同规则在Nacos中的配置.md",
             "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "0e7cfa120136599e",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Java/Spring/服务构建过程.md",
-            "mode": "preview"
           }
         }
       }
@@ -50,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "bootstrap",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -71,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 295
+    "width": 295,
+    "collapsed": true
   },
   "right": {
     "id": "2a9568509ba0b482",
@@ -87,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/Spring Cloud/服务.md",
+                "file": "Java/Spring Cloud/Sentinel不同规则在Nacos中的配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/Spring Cloud/服务.md"
+                "file": "Java/Spring Cloud/Sentinel不同规则在Nacos中的配置.md"
               }
             }
           }
@@ -124,19 +114,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 262.5
+    "width": 264.5,
+    "collapsed": true
   },
-  "active": "51c5a4d632c8de1f",
+  "active": "a63aee157256a94b",
   "lastOpenFiles": [
-    "Java/Spring Cloud/服务.md",
+    "Java/Spring Cloud/Sentinel不同规则在Nacos中的配置.md",
+    "Java/Spring Cloud/Nacos.md",
+    "Java/Spring Cloud/Sentinel.md",
+    "Java/Spring Cloud/限流，降级，熔断.md",
     "Java/Spring/服务构建过程.md",
-    "Java/Spring/Nacos.md",
-    "Java/Spring Cloud/微服务.md",
+    "Java/Spring Cloud/注意事项.md",
+    "Java/Spring Cloud/注册中心与配置中心.md",
+    "Java/Spring Cloud/服务.md",
     "Java/Spring Cloud/网关.md",
-    "Java/Spring Cloud/负载均衡.md",
-    "Test/Use.md",
-    "Java/Spring/Nacos-new.md",
-    "Java/Spring/Dubbo.md",
-    "Java/Spring/Untitled.md"
+    "Java/Spring Cloud/负载均衡.md"
   ]
 }
