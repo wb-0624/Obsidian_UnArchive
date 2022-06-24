@@ -67,6 +67,7 @@ java -Dserver.port=8333 -Dcsp.sentinel.dashboard.server=localhost:8333 -Dproject
 > 0：QPS。单纯的代表每秒的访问次数，只要访问次数到达一定的阈值，这进行限流操作
 > 1：线程数。代表的是每秒内访问改api接口的线程数，如果该接口的操作比较长，当排队的线程数到达阈值的时候，进行限流操作，相反的如果接口的操作很快，即是没秒内的操作很快，同样不会进行限流操作
 > QPS可以简单的理解为访问次数，但是线程数是和接口处理的快慢有关的。
+
 + limitApp：流控针对的调用来源。
 
 > default：不区分
@@ -76,6 +77,7 @@ java -Dserver.port=8333 -Dcsp.sentinel.dashboard.server=localhost:8333 -Dproject
 > other：需要先配一个{name}，非{name}中的来源就会被other接管
 
 + count：QPS或线程数的阈值。
+
 + strategy
 
 > 0：直接。最简单，直接对resource生效流控规则。
@@ -105,7 +107,7 @@ java -Dserver.port=8333 -Dcsp.sentinel.dashboard.server=localhost:8333 -Dproject
 + clusterMode
     + 关于集群的介绍，专门开了一块。
 
-## 熔断(degrad)
+## 熔断(degrade)
 
 ![](img/熔断规则.png)
 
@@ -247,7 +249,7 @@ Sentinel 在系统自适应保护的做法是，用 `load1` 作为启动控制�
 
 ![](img/嵌入部署设置.png)
 
-## 使用
+### 使用
 
 要想使用集群限流功能，必须引入集群限流 client 相关依赖：
 
@@ -259,7 +261,7 @@ Sentinel 在系统自适应保护的做法是，用 `load1` 作为启动控制�
 ```
 
 
-## 规则配置
+### 规则配置
 
 集群的配置属于流控的部分。相比流控的部分，额外多一些参数。
 
@@ -270,6 +272,55 @@ Sentinel 在系统自适应保护的做法是，用 `load1` 作为启动控制�
 |          count          |                     还是表示阈值                     |        |
 
 ![](img/集群流控.png)
+
+## 路由模式
+
+在Sentinel启动命令，-jar后增加 -Dcsp.sentinel.add.type = 1即可。
+
+### 路由规则(gw-flow) 
+
+route维度
+
+针对在Spring配置文件中配置的路由条目。
+
+|         属性         |                           说明                            |                       默认值                       |
+|:--------------------:|:---------------------------------------------------------:|:--------------------------------------------------:|
+|       resource       |                         资源名称                          | 可以是网关中的route名称或者用户自定义的API分组名称 |
+|     resourceMode     | 规则是针对Gateway的route还是用户在Sentinel中定义的API分组 |                       route                        |
+|        grade         |                       限流指标维度                        |               与 限流 中的grade相同                |
+|        count         |                         限流阈值                          |                                                    |
+|     intervalSec      |                     统计时间窗口，s。                     |                         1s                         |
+|   controlBehavior    |       流控效果，目前支持0：快速失败，1：匀速排队。        |                         0                          |
+|        brust         |             应对突发请求时额外允许的请求数目              |                                                    |
+| maxQueueingTimeoutMs |              排队模式下的最长排队时间，ms。               |   500                                                 |
+|      paramItem       | 参数限流配置。不设置就会转换为流控规则，设置就转换为热点规则。                                                          |                                                    |
+
++ paramItem
+    + parseStrategy
+    来源IP
+    任意Header
+    任意URL参数
+    Host
+    + fieldName
+    若提取策略选择Header模式或URL参数模式。
+    需要指定对应的Header名称或URL参数名称。
+    + pattern
+    参数值的匹配模式。
+    + matchStrategy
+    参数值的匹配策略。
+    精确匹配
+    子串匹配
+    正则匹配
+
+### 自定义api分组规则(gw-api-group) 
+
+Sentienl提供的API分组维度
+
+
+
+## 多种规则存在时
+
+![](img/sentinel-slot-chain-architecture.png)
 
 # 注解支持
 
