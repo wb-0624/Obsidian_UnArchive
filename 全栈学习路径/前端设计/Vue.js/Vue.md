@@ -223,6 +223,8 @@ new Vue({
 
 ### v-model
 
+实现表单输入和应用状态之间的双向绑定。
+
 ```vue
 <div id="app">
     <p>{{ message }}</p>
@@ -308,7 +310,6 @@ new Vue({
 显示效果
 
 +   0.   name : 菜鸟教程
-
 +   1.   url : http://www.runoob.com
 +   2.   slogan : 学的不仅是技术，更是梦想！
 
@@ -328,7 +329,7 @@ new Vue({
     <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
 </div>
 
-v-bind:简写为:
+v-bind:简写为  :
 ```
 
 

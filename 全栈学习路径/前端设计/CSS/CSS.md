@@ -72,11 +72,11 @@ p.center {/*对<p class = "center"></p>的内容居中显示*/
 
 ```css
 <head>
-<style>
-hr {color:sienna;}
-p {margin-left:20px;}
-body {background-image:url("images/back40.gif");}
-</style>
+    <style>
+    hr {color:sienna;}
+    p {margin-left:20px;}
+    body {background-image:url("images/back40.gif");}
+    </style>
 </head>
 ```
 

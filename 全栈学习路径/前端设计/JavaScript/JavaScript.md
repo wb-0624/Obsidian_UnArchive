@@ -4,7 +4,7 @@
 
 HTML中的脚本必须放在\<script>\</script>之间。
 
-脚本可以被放置在\<body>\<head>中。
+\<script>\</script>可以被放置在\<body>\<head>中。
 
 # 脚本添加方式
 

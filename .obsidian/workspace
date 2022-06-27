@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "全栈学习路径/前端设计/CSS/易错提示.md",
-            "mode": "preview"
+            "file": "Learn/前端相关/Vue理念，结构.md",
+            "mode": "source"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "span",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -71,20 +71,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f6d27fe351088a9a",
+            "id": "3c801f2d5d3feec2",
             "type": "leaf",
             "state": {
-              "type": "backlink",
+              "type": "outline",
               "state": {
-                "file": "全栈学习路径/前端设计/CSS/易错提示.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "file": "Learn/前端相关/Vue理念，结构.md"
               }
+            }
+          },
+          {
+            "id": "2f10cff64f71c6d9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           },
           {
@@ -99,25 +100,23 @@
             }
           },
           {
-            "id": "3c801f2d5d3feec2",
+            "id": "f6d27fe351088a9a",
             "type": "leaf",
             "state": {
-              "type": "outline",
+              "type": "backlink",
               "state": {
-                "file": "全栈学习路径/前端设计/CSS/易错提示.md"
+                "file": "Learn/前端相关/Vue理念，结构.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               }
             }
-          },
-          {
-            "id": "2f10cff64f71c6d9",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -125,15 +124,15 @@
   },
   "active": "3b2ef674c9379891",
   "lastOpenFiles": [
-    "全栈学习路径/前端设计/CSS/易错提示.md",
-    "全栈学习路径/前端设计/JavaScript/JavaScript.md",
+    "Learn/前端相关/Vue理念，结构.md",
+    "Learn/前端相关/Vue3.md",
     "全栈学习路径/前端设计/Vue.js/Vue.md",
-    "Java/webkit-sample/js.md",
-    "Java/webkit-sample/tailWindcss.md",
-    "Java/webkit-sample/Vue3.md",
-    "Java/webkit-sample/项目结构.md",
-    "Java/未命名.md",
-    "Java/Spring Cloud/Sentinel使用.md",
-    "Java/Spring Cloud/Nacos使用.md"
+    "全栈学习路径/前端设计/JavaScript/JavaScript.md",
+    "Learn/前端相关/js.md",
+    "Learn/前端相关/tailwindcss.md",
+    "全栈学习路径/前端设计/HTML/HTML标签速查.md",
+    "全栈学习路径/前端设计/HTML/HTML.md",
+    "全栈学习路径/后端语言/Go语言笔记.md",
+    "全栈学习路径/前端设计/CSS/CSS.md"
   ]
 }
