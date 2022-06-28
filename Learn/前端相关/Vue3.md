@@ -23,8 +23,7 @@ Vue.createApp({})
 
 ## 应用和组件
 
-应用：用过createApp创建的一个Vue实例，应用实例
-组件：就是标签。标签是内置的，而组件是可以自定义的。将应用挂载之后就可以变成组件。
+组件也是应用实例。一般情况下，只有根实例叫做应用实例，其余都算组件。
 
 # 应用配置
 
@@ -75,6 +74,20 @@ app.component('my-component', {
 
 作用在html标签内部，更为简便的实现一些功能。
 
+## v-text
+
+## v-slot
+
+## v-pre
+
+## v-cloak
+
+## v-once
+
+## v-memo
+
+## v-is
+
 ## v-if
 ```js
 <p v-if="seen">能看见<p>
@@ -120,6 +133,41 @@ new Vue({
 如果使用{{message}}的格式输出，本会将html代码都以字符串的形式进行展示。而现在则相当于html代码起了作用。
 
 ## v-on
+
+缩写为`@`。
+
+用于事件处理，更常用的是点击事件。
+
+```html
+<div id="event-with-method">
+  <!-- `greet` 是在下面定义的方法名 -->
+  <button @click="greet">Greet</button>
+</div>
+```
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      name: 'Vue.js'
+    }
+  },
+  methods: {
+    greet(event) {
+      // `methods` 内部的 `this` 指向当前活动实例
+      alert('Hello ' + this.name + '!')
+      // `event` 是原生 DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+}).mount('#event-with-method')
+```
+
+多事件处理
+
+按键修饰
 
 ## v-for
 
@@ -197,25 +245,163 @@ new Vue({
 
 ## v-model
 
-```js
-<div id="app">
-    <p>{{ message }}</p>
-    <input v-model="message">
+数据的双向绑定
+
+### 文本(Text)
+
+```html
+<div id="v-model-basic" class="demo">
+  <input v-model="message" placeholder="edit me" />
+  <p>Message is: {{ message }}</p>
 </div>
-    
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    message: 'Something'
-  }
-})
-</script>
-//输入框默认有Something，随着自己改变，message值也会改变，同时反映在上面的<p>{{message}}</p>
 ```
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      message: ''
+    }
+  }
+}).mount('#v-model-basic')
+```
+
+### 多行文本(Textarea)
+
+```html
+<div id="v-model-textarea" class="demo">
+  <span>Multiline message is:</span>
+  <p style="white-space: pre-line;">{{ message }}</p>
+  <br />
+  <textarea v-model="message" placeholder="add multiple lines"></textarea>
+</div>
+```
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      message: ''
+    }
+  }
+}).mount('#v-model-basic')
+```
+
+### 复选框(Checkbox)
+
+```html
+<div id="v-model-checkbox" class="demo">
+  <input type="checkbox" id="checkbox" v-model="checked" />
+  <label for="checkbox">{{ checked }}</label>
+</div>
+```
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      checked: false
+    }
+  }
+}).mount('#v-model-checkbox')
+```
+
+
+### 单选框(Radio)
+
+```html
+<div id="v-model-radiobutton">
+  <input type="radio" id="one" value="One" v-model="picked" />
+  <label for="one">One</label>
+  <br />
+  <input type="radio" id="two" value="Two" v-model="picked" />
+  <label for="two">Two</label>
+  <br />
+  <span>Picked: {{ picked }}</span>
+</div>
+```
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      picked: ''
+    }
+  }
+}).mount('#v-model-radiobutton')
+```
+
+### 选择框(Select)
+
+```html
+<div id="v-model-select" class="demo">
+  <select v-model="selected">
+    <option disabled value="">Please select one</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+```
+
+如果 `v-model` 表达式的初始值未能匹配任何选项，`<select>` 元素将被渲染为“未选中”状态。在 iOS 中，这会使用户无法选择第一个选项。因为这样的情况下，iOS 不会触发 `change` 事件。因此，更推荐像上面这样提供一个值为空的禁用选项。
+
+```js
+Vue.createApp({
+  data() {
+    return {
+      selected: ''
+    }
+  }
+}).mount('#v-model-select')
+```
+
+
 ## v-bind
 
+简写为`:`
+
+**对象语法**
+
+表示 `active` 这个 class 取决于 data property `isActive` 的truthiness
+
+表示 `text-danger` 这个 class 取决于 data property `hasError` 的truthiness
+
+```html
+<div
+  class="static"
+  :class="{ active: isActive, 'text-danger': hasError }"
+></div>
+```
+
+```js
+data() {
+  return {
+    isActive: true,
+    hasError: false
+  }
+}
+```
+
+**数组语法**
+
+```html
+<div :class="[activeClass, errorClass]"></div>
+```
+
+```js
+data() {
+  return {
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  }
+}
+```
+
 # 特殊attribute
+
+
 
 # 内置组件
 
