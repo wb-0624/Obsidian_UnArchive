@@ -9,5 +9,6 @@
   "markdown-prettifier",
   "obsidian-charts",
   "extract-url",
-  "oz-clear-unused-images"
+  "oz-clear-unused-images",
+  "obsidian-regex-replace"
 ]

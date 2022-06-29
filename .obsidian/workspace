@@ -4,11 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "f1d50a6e3e03a6c1",
+        "id": "058f7de80849d6fd",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Learn/前端相关/Vue3理解.md",
+            "mode": "preview"
+          }
         }
       }
     ],
@@ -36,9 +39,9 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "span",
+                "query": "",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
@@ -72,7 +75,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Learn/前端相关/Vue3理解.md"
+              }
             }
           },
           {
@@ -100,6 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Learn/前端相关/Vue3理解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,19 +120,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5
+    "width": 370.5
   },
-  "active": "f1d50a6e3e03a6c1",
+  "active": "058f7de80849d6fd",
   "lastOpenFiles": [
+    "Learn/前端相关/Vue3理解.md",
+    "Learn/前端相关/Vue组件.md",
+    "Learn/前端相关/Vue3.md",
+    "Learn/前端相关/css3和tailwindcss.md",
+    "全栈学习路径/前端设计/CSS/CSS.md",
+    "全栈学习路径/前端设计/HTML/HTML.md",
+    "Test/Use.md",
     "Learn/前端相关/tailwind css查询文档.md",
     "全栈学习路径/前端设计/JavaScript/JavaScript.md",
-    "Learn/前端相关/Vue3.md",
-    "Learn/前端相关/Vue组件.md",
-    "全栈学习路径/前端设计/Vue.js/Vue.md",
-    "Learn/前端相关/js.md",
-    "Learn/前端相关/tailwindcss.md",
-    "全栈学习路径/前端设计/HTML/HTML标签速查.md",
-    "全栈学习路径/前端设计/HTML/HTML.md",
-    "全栈学习路径/后端语言/Go语言笔记.md"
+    "全栈学习路径/前端设计/Vue.js/Vue.md"
   ]
 }

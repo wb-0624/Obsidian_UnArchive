@@ -112,7 +112,7 @@ display: block. 变为块形式。
 # Position
 
 +   static 默认定位。即没有定位。静态元素，不受top，bottom，left，right影响。
-+   fixed 固定定位。即使窗口滚动，元素也不动。
++   fixed 固定定位。即使窗口滚动，元素也不动。相对于浏览器视窗的位置。
 +   relative 相对正常定位。调整 top等值，相对正常进行移动。
 +   absolute 绝对定位。相对于其最近非static父元素定位，注意可以和其他元素重叠。如果没有父元素，则位置相对于\<html>
 +   sticky 粘性定位。介于默认和固定之间。父元素不能是overflow: hidden或者overflow: auto属性。设定top等值的一个阈值。若元素与其父元素的距离大于阈值，就按照默认进行，当距离达到阈值时，就变成固定。

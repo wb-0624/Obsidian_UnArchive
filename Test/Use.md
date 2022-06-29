@@ -10,6 +10,9 @@
 
 note,abstract,info,tip,success,question,warning,failure,danger,bug,example,quote
 
+git clone ssh://git@47.96.160.63:10022/yingchaojie/lingke.git
+
+
 [^1]:注释
 
 
