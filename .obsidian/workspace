@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "058f7de80849d6fd",
+        "id": "6be97582871fd9e5",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Learn/前端相关/Vue3理解.md",
-            "mode": "preview"
+            "file": "Learn/前端相关/Vue理解.md",
+            "mode": "source"
           }
         }
       }
@@ -76,7 +76,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Learn/前端相关/Vue3理解.md"
+                "file": "Learn/前端相关/Vue理解.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Learn/前端相关/Vue3理解.md",
+                "file": "Learn/前端相关/Vue理解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,17 +122,17 @@
     "direction": "horizontal",
     "width": 370.5
   },
-  "active": "058f7de80849d6fd",
+  "active": "6be97582871fd9e5",
   "lastOpenFiles": [
+    "Learn/前端相关/Vue理解.md",
     "Learn/前端相关/Vue3理解.md",
-    "Learn/前端相关/Vue组件.md",
+    "Learn/前端相关/Vue文档.md",
     "Learn/前端相关/Vue3.md",
-    "Learn/前端相关/css3和tailwindcss.md",
-    "全栈学习路径/前端设计/CSS/CSS.md",
-    "全栈学习路径/前端设计/HTML/HTML.md",
-    "Test/Use.md",
-    "Learn/前端相关/tailwind css查询文档.md",
-    "全栈学习路径/前端设计/JavaScript/JavaScript.md",
-    "全栈学习路径/前端设计/Vue.js/Vue.md"
+    "Learn/前端相关/Vue项目理解--以webkit-sample为例.md",
+    "Learn/前端相关/Vue组件.md",
+    "Learn/前端相关/img/webkit-sample.png",
+    "Learn/前端相关/img/layout-admin.png",
+    "Learn/Spring Cloud/注册中心与配置中心.md",
+    "Learn/Spring Cloud/网关.md"
   ]
 }

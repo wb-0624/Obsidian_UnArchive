@@ -1,5 +1,4 @@
 [
-  "ProxyGithub",
   "table-editor-obsidian",
   "templater-obsidian",
   "sliding-panes-obsidian",
@@ -10,5 +9,7 @@
   "obsidian-charts",
   "extract-url",
   "oz-clear-unused-images",
-  "obsidian-regex-replace"
+  "obsidian-regex-replace",
+  "obsidian-pandoc",
+  "ProxyGithub"
 ]
