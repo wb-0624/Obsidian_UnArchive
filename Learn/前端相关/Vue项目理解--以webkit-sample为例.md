@@ -305,6 +305,7 @@ router.meta[RouteMetaKey.menuIcon]
 
 
 
+
 # 项目具体问题
 
 ## import 和 import{}
@@ -399,3 +400,22 @@ function add() { count.value++ }
 ## 使用第三方组件却没有导入和注册？
 
 使用了"unplugin-vue-components"等一些可以自动插入组件的插件。
+
+
+## header 和 footer 
+
+```html
+<el-dialog>
+    <template #header>
+      <div class="flex items-center justify-center">
+        <slot name="title"/>
+      </div>
+    </template>
+</el-dialog>
+```
+
+按理说，#header之后应该会被一个`<slot name = "header">`，所引用才对。
+
+实际上，引用的插槽在 `<el-dialog>`当中，被包装好了。
+
+`<footer>`部分同理。

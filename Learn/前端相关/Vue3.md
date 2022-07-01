@@ -55,6 +55,8 @@ app.component('my-component', {
 })
 ```
 
+
+
 ## config
 ## directive
 ## mixin
