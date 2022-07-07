@@ -7,8 +7,11 @@
         "id": "80bcaa9cd42ffe6f",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Learn/Vue/Vue3理解.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -72,7 +75,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Learn/Vue/Vue3理解.md"
+              }
             }
           },
           {
@@ -100,6 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Learn/Vue/Vue3理解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,14 +124,14 @@
   },
   "active": "80bcaa9cd42ffe6f",
   "lastOpenFiles": [
+    "Learn/Vue/Vue3理解.md",
+    "Learn/Vue/Vue文档.md",
+    "Learn/Vue/Vue项目理解--以webkit-sample为例.md",
     "Learn/Vue/webkit-sample/README.md",
     "Learn/Vue/webkit-sample/live_templates.md",
     "Learn/Vue/Vue组件.md",
-    "Learn/Vue/Vue项目理解--以webkit-sample为例.md",
-    "Learn/Vue/Vue3理解.md",
     "Learn/Vue/img/页面.png",
     "Learn/Vue/img/页面检查.png",
-    "Learn/Vue/Vue文档.md",
     "Learn/Vue/注意事项及问题.md",
     "Learn/Vue/Vue理解.md"
   ]
