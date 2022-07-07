@@ -1,6 +1,6 @@
 # css3
 
-![](img/css语法.png)
+![](../Vue/img/css语法.png)
 
 ## 选择器
 
@@ -542,4 +542,4 @@ css文件独立，在html或vue中的`<link>`导入
 </div>
 ```
 
-直接在class = “”中导入一系列值即可。
+直接在class = “”中导入一系列值即可

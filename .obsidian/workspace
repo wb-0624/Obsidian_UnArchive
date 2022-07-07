@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "44b80c502464bfb3",
+        "id": "80bcaa9cd42ffe6f",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Learn/前端相关/Vue项目理解--以webkit-sample为例.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -60,7 +57,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 295
+    "width": 283
   },
   "right": {
     "id": "2a9568509ba0b482",
@@ -75,9 +72,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Learn/前端相关/Vue项目理解--以webkit-sample为例.md"
-              }
+              "state": {}
             }
           },
           {
@@ -105,7 +100,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Learn/前端相关/Vue项目理解--以webkit-sample为例.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,19 +114,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 147.5
   },
-  "active": "44b80c502464bfb3",
+  "active": "80bcaa9cd42ffe6f",
   "lastOpenFiles": [
-    "Learn/前端相关/Vue项目理解--以webkit-sample为例.md",
-    "Learn/前端相关/Vue文档.md",
-    "Learn/前端相关/Vue理解.md",
-    "全栈学习路径/前端设计/Vue.js/Vue.md",
-    "Learn/前端相关/Vue3.md",
-    "Learn/前端相关/Vue组件.md",
-    "Learn/前端相关/Vue3理解.md",
-    "Learn/前端相关/img/webkit-sample.png",
-    "Learn/前端相关/img/layout-admin.png",
-    "Learn/Spring Cloud/注册中心与配置中心.md"
+    "Learn/Vue/webkit-sample/README.md",
+    "Learn/Vue/webkit-sample/live_templates.md",
+    "Learn/Vue/Vue组件.md",
+    "Learn/Vue/Vue项目理解--以webkit-sample为例.md",
+    "Learn/Vue/Vue3理解.md",
+    "Learn/Vue/img/页面.png",
+    "Learn/Vue/img/页面检查.png",
+    "Learn/Vue/Vue文档.md",
+    "Learn/Vue/注意事项及问题.md",
+    "Learn/Vue/Vue理解.md"
   ]
 }
