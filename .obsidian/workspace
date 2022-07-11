@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Work/2022.7.4--2022.7.9.md",
+            "file": "Learn/Vue/Vue.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Work/2022.7.4--2022.7.9.md"
+                "file": "Learn/Vue/Vue.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Work/2022.7.4--2022.7.9.md",
+                "file": "Learn/Vue/Vue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,6 +124,8 @@
   },
   "active": "80bcaa9cd42ffe6f",
   "lastOpenFiles": [
+    "Learn/Vue/Vue.md",
+    "Work/2022.7.11-2022.7.16.md",
     "Work/2022.7.4--2022.7.9.md",
     "Learn/Vue/Vue3理解.md",
     "Learn/Vue/Vue文档.md",
@@ -131,8 +133,6 @@
     "Learn/Vue/webkit-sample/README.md",
     "Learn/Vue/webkit-sample/live_templates.md",
     "Learn/Vue/Vue组件.md",
-    "Learn/Vue/img/页面.png",
-    "Learn/Vue/img/页面检查.png",
-    "Learn/Vue/注意事项及问题.md"
+    "Learn/Vue/img/页面.png"
   ]
 }
