@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Work/2022.7.11-2022.7.16.md",
+            "file": "Learn/Vue/Vue.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Work/2022.7.11-2022.7.16.md"
+                "file": "Learn/Vue/Vue.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Work/2022.7.11-2022.7.16.md",
+                "file": "Learn/Vue/Vue.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,9 +124,9 @@
   },
   "active": "80bcaa9cd42ffe6f",
   "lastOpenFiles": [
+    "Learn/Vue/Vue.md",
     "Work/2022.7.11-2022.7.16.md",
     "学习内容.md",
-    "Learn/Vue/Vue.md",
     "Work/2022.7.4--2022.7.9.md",
     "Learn/Vue/Vue3理解.md",
     "Learn/Vue/Vue文档.md",
