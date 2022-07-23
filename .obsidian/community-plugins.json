@@ -3,12 +3,9 @@
   "templater-obsidian",
   "sliding-panes-obsidian",
   "cm-editor-syntax-highlight-obsidian",
-  "quickadd",
   "better-word-count",
   "markdown-prettifier",
-  "obsidian-charts",
   "oz-clear-unused-images",
   "obsidian-regex-replace",
-  "obsidian-pandoc",
-  "ProxyGithub"
+  "obsidian-pandoc"
 ]

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Learn/Vue/Vue3理解.md",
+            "file": "Learn/数据库/SQL语法.md",
             "mode": "source"
           }
         }
@@ -76,7 +76,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Learn/Vue/Vue3理解.md"
+                "file": "Learn/数据库/SQL语法.md"
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Learn/Vue/Vue3理解.md",
+                "file": "Learn/数据库/SQL语法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,15 +124,15 @@
   },
   "active": "4e5d08623acd9615",
   "lastOpenFiles": [
+    "Myself/参与项目/教学智慧实训管理系统.md",
+    "Learn/数据库/SQL语法.md",
+    "Learn/数据库/数据库相关概念.md",
+    "Learn/Vue/注意事项及问题.md",
     "Learn/Vue/Vue3理解.md",
     "Learn/Vue/img/多页面应用.png",
     "Learn/Vue/img/项目启动成功.png",
     "Learn/Vue/Vue.md",
     "Work/2022.7.11-2022.7.16.md",
-    "Learn/Vue/注意事项及问题.md",
-    "Work/2022.7.4--2022.7.9.md",
-    "Work/img/Pasted image 20220711153507.png",
-    "学习内容.md",
-    "Learn/Vue/Vue文档.md"
+    "Work/2022.7.4--2022.7.9.md"
   ]
 }
